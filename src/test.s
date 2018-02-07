@@ -12,12 +12,15 @@
 
 ; our code starts here
 ; put color 0 into border color
-ldy #$0a
-ldx #$00
+ldx #$ff
+ldy #$00
 start:
 sty $d020  ; border color
-stx $d021  ; bg color around text
-inx
-dey
-jmp start
+; stx $d021  ; bg color around text
+txa
+jsr $ffd2  ; output character in a to screen
+dex
+iny
+cpx #$00
+bne start
 rts
