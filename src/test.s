@@ -12,8 +12,12 @@
 
 ; our code starts here
 ; put color 0 into border color
-lda #$0a
-sta $d020  ; border color
-lda #$00
-sta $d021  ; bg color around text
+ldy #$0a
+ldx #$00
+start:
+sty $d020  ; border color
+stx $d021  ; bg color around text
+inx
+dey
+jmp start
 rts
