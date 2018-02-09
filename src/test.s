@@ -25,6 +25,9 @@ sta $3000, x
 dex
 bpl load_car_row
 
+lda #$c0  ; $3000/64 = $3000/$40 = $c0
+sta $07f8
+
 ; put sprite 0 in to multicolor mode
 ; lda $d01c
 lda #%00000001
@@ -51,12 +54,11 @@ sta $d026
 ; lda $d015
 lda #%00000001
 sta $d015
-rts
 
 ; TODO(lucasw) this is clobbering d015 and d01c
 ; set xy coordinata sprite 0
 lda #$00
-ldx #$00
+ldx #$10
 move_sprite:
 sta $d020  ; border color
 stx $d000
@@ -64,11 +66,11 @@ ldy #20
 sty $d001
 inx
 ina
-cpx #$ff
-bne move_sprite
+; cpx #$ff
+; bne move_sprite
 ; jmp move_sprite
 
-lda #$05
+lda #$01
 sta $d020  ; border color
 
 car_sprite
