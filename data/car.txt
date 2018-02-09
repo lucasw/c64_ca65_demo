@@ -1,0 +1,18 @@
+
+; generated with spritemate on 2/8/2018, 5:07:09 PM
+
+LDA #0 ; sprite multicolor 1
+STA $D025
+LDA #6 ; sprite multicolor 2
+STA $D026
+
+
+sprite_1
+!byte $00,$00,$00,$00,$00,$00,$00,$00
+!byte $00,$00,$00,$00,$00,$00,$00,$00
+!byte $aa,$00,$00,$bf,$80,$00,$82,$e0
+!byte $02,$82,$38,$2a,$aa,$aa,$2a,$ba
+!byte $aa,$2a,$aa,$aa,$2a,$aa,$aa,$2a
+!byte $aa,$aa,$3f,$ff,$d7,$15,$7f,$55
+!byte $15,$40,$55,$05,$00,$14,$00,$00
+!byte $00,$00,$00,$00,$00,$00,$00,$83
